@@ -6,10 +6,69 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Program
+    class Computer
     {
-        static void Main(string[] args)
+        public int memory;
+        public int disk;
+        public string name;
+
+        public Computer(int computermemory
+                           , int computerdisk
+                           , string computerName)
         {
+            memory = computermemory;
+            disk = computerdisk;
+            name = computerName;
+        }
+
+
+        public string ComputerName
+        {
+            get
+            {
+                return name;
+            }
+            private set
+            {
+                ComputerName = value;
+
+            }
+        }
+        public string installedOS;
+
+        public string InstalledOS
+        {
+            get
+            {
+                return InstalledOS;
+            }
+            private set
+            {
+                installedOS = value;
+            }
+        }
+        public void PrintSpec()
+        {
+            Console.WriteLine("Memory = {0}MB, Disk = {1}GB", memory, disk);
         }
     }
+    class MainClass
+    {
+        static void Main()
+        {
+            Computer computer1;           
+            computer1 = new Computer(1000,0, "Sales01");
+            computer1.installedOS = "Windows 8 Ultimate";
+            Console.WriteLine("{0}, {1}", computer1.name, computer1.installedOS);
+            computer1.PrintSpec();
+
+            Computer computer2;
+            computer2 = new Computer(1600, 120, "Sailes02");
+            computer2.installedOS = "Windows 7 Professional";
+            Console.WriteLine("{0}, {1}", computer2.name, computer2.installedOS);
+            computer2.PrintSpec();
+        }
+
+    }
 }
+    
